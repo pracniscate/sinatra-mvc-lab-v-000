@@ -2,9 +2,8 @@ class PigLatinizer
   attr_reader :text
 
   def piglatinize(text)
-    alphabet = ('a'..'z').to_a # make an array of the alphabet
-    vowels = /[aeiou]/ # vowel array
-    consonants = alphabet - vowels # consonant array
+    vowels = /[aeiou]/
+    consonants = /[bcdfghjklmnpqrstvwxyz]/
 
     @text_array = text.split(" ")
     @text_array.map do |word|
