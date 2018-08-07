@@ -3,7 +3,7 @@ class PigLatinizer
 
   def piglatinize(text)
     alphabet = ('a'..'z').to_a # make an array of the alphabet
-    vowels = %w[a e i o u] # vowel array
+    vowels = /[aeiou]/ # vowel array
     consonants = alphabet - vowels # consonant array
 
     @text_array = text.split(" ")
