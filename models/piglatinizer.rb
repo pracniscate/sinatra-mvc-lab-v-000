@@ -3,31 +3,31 @@ class PigLatinizer
 
   def starts_with_vowel?(word)
     !!/^[AEIOUaeiou]/.match(word)
-  end 
+  end
 
   def piglatinize(text)
-    # split string up into an array of words 
+    # split string up into an array of words
     text_arr = text.split(" ")
-    
-    # collect a new array from that one 
+
+    # collect a new array from that one
     text_arr.collect do |word|
-      
+
       # starts with vowel
       if self.starts_with_vowel?(word)
         word + "way"
-        
+
       # starts with constonants
       else
         first_letters = /^[^AEIOUaeiou]+/.match(word)[0]
         word[first_letters.size..-1] + first_letters + "ay"
-      end 
+      end
     end.join(" ")
-  end 
+  end
 
   # def piglatinize(text)
   #   vowels = /[aeiou]/
   #   consonants = /[bcdfghjklmnpqrstvwxyz]/
-  # 
+  #
   #   @text_array = text.split(" ")
   #   @text_array.map do |word|
   #     if word[0].match(vowels)
@@ -38,7 +38,7 @@ class PigLatinizer
   #     end
   #   end.join(" ")
   # end
-  # 
+  #
   # def move_letters(word, consonant)
   #   word_array = word.split("")
   #   consonant.times do
